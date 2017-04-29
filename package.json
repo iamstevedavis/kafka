@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./index.js",
+  "author": "Stephen Davis <sdavis@opentext.com>",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "kafka-node": "^1.6.0"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.opentext.com/"
+  },
+  "repository": {},
+  "scripts": {
+    "start": "node lib/Service.js",
+    "docs": "rm -rf out; ./node_modules/.bin/jsdoc -c config/jsdoc.conf --readme ./README.md; true",
+    "test": "mocha --recursive --reporter=spec; true",
+    "cover": "istanbul cover --dir=./reports/coverage _mocha -- --reporter mocha-jenkins-reporter --recursive; true",
+    "lint": "eslint ./ --quiet; true"
+  }
+}
